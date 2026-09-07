@@ -7,6 +7,10 @@ if [[ "$#" -ne 3 ]]; then
 fi
 
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+export PYTHONPATH="$HERE/.deps${PYTHONPATH:+:$PYTHONPATH}"
+if ! python -c "import brotli" >/dev/null 2>&1; then
+  bash "$HERE/prepare_dependencies.sh"
+fi
 DATA_DIR="$1"
 OUTPUT_DIR="$2"
 FILE_LIST="$3"

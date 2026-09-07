@@ -73,6 +73,7 @@ class QuantizedTable:
     codes: np.ndarray
     scale: float
     values: np.ndarray
+    margins: tuple[int, ...] = ()
 
 
 @dataclass(frozen=True)
@@ -197,7 +198,7 @@ def read_residual_archive(archive_path: Path) -> ResidualArchiveParts:
         if archive.namelist() != ["p"]:
             raise ResidualArchiveError("archive must contain exactly member p")
         outer = archive.read("p")
-    if outer.startswith(b"BLK1"):
+    if outer.startswith((b'BLK1', b'BLK2')):
         models, section = decode_model_blocks(outer)
     else:
         try:
@@ -218,11 +219,34 @@ def read_residual_archive(archive_path: Path) -> ResidualArchiveParts:
         FIXED_STATES * NUM_CLASSES,
         FIXED_BITS,
     )
-    compact_size = fixed_size - len(FIXED_MAGIC)
-    if len(section) <= compact_size:
-        raise ResidualArchiveError("truncated F24S residual or token section")
-    residual = FIXED_MAGIC + section[:compact_size]
-    table = _decode_fixed_table(residual)
+    if section.startswith(b"ETP1"):
+        if len(section) < 10:
+            raise ResidualArchiveError("truncated ETP1 table")
+        count = section[4]
+        if not 1 <= count <= 3:
+            raise ResidualArchiveError("invalid ETP1 margin count")
+        margins = tuple(section[5:5 + count])
+        if tuple(sorted(set(margins))) != margins or not all(0 < v < 128 for v in margins):
+            raise ResidualArchiveError("invalid ETP1 margins")
+        states = int.from_bytes(section[5 + count:7 + count], "little")
+        if states != FIXED_STATES * (count + 1):
+            raise ResidualArchiveError("invalid ETP1 state count")
+        scale = float(np.frombuffer(section[7 + count:9 + count], dtype="<f2")[0])
+        if not np.isfinite(scale) or scale <= 0:
+            raise ResidualArchiveError("invalid ETP1 scale")
+        compact_size = 9 + count + packed_length(states * NUM_CLASSES, FIXED_BITS)
+        if len(section) <= compact_size:
+            raise ResidualArchiveError("truncated ETP1 codes or token stream")
+        codes = np.asarray(unpack_signed(section[9 + count:compact_size], states * NUM_CLASSES, FIXED_BITS), dtype=np.int8).reshape(states, NUM_CLASSES)
+        table = QuantizedTable("boundary_margin", FIXED_BITS, codes, scale,
+                               codes.astype(np.float32) * scale, margins)
+        residual = section[:compact_size]
+    else:
+        compact_size = fixed_size - len(FIXED_MAGIC)
+        if len(section) <= compact_size:
+            raise ResidualArchiveError("truncated F24S residual or token section")
+        residual = FIXED_MAGIC + section[:compact_size]
+        table = _decode_fixed_table(residual)
     tokens = section[compact_size:]
     if not tokens:
         raise ResidualArchiveError("empty F24S RC64 token stream")
@@ -353,6 +377,11 @@ def decode_production_tokens(
                     boundary[flat_positions].astype(np.int64) * NUM_CLASSES
                     + predicted
                 )
+                if parts.table.margins:
+                    top = np.partition(base_logits, -2, axis=1)[:, -2:]
+                    margin = top[:, 1] - top[:, 0]
+                    bucket = np.searchsorted(np.asarray(parts.table.margins), margin, side="right")
+                    feature = feature * (len(parts.table.margins) + 1) + bucket
                 corrected = base_logits + parts.table.values[feature]
                 corrected_digest.update(
                     np.ascontiguousarray(corrected, dtype="<f4").tobytes()
