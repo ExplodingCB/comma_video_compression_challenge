@@ -1,0 +1,2 @@
+# Python 3.11; standard-library lzma and zipfile are also required.
+brotli==1.2.0

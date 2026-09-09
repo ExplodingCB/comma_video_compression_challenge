@@ -1,0 +1,104 @@
+{
+  "schema": 1,
+  "scope": "Recovered compression input bundle; does not contain the finished v2 archive",
+  "files": [
+    {
+      "path": "submissions/semantic_blocks/archive.zip",
+      "bytes": 186151,
+      "sha256": "d8ae5a9f4c3205ff2f2d823943afd3d25f8eb5cf9fd1e148c1159175e8f80c48",
+      "stage": "submissions/semantic_blocks/archive.zip",
+      "role": "Pretrained v1 baseline",
+      "download_url": "https://github.com/ExplodingCB/comma_video_compression_challenge/releases/download/semantic-blocks-v1/archive.zip"
+    },
+    {
+      "path": "results/phase2/pose/full-control/pass3-codes.npy",
+      "bytes": 28928,
+      "sha256": "32094037b87cae7010ff1fb95766490593085eb599403ce24645afd1b4e34838",
+      "stage": "checkpoints/pass3-codes.npy",
+      "role": "Saved optimized signed-int12 pose coefficients",
+      "download_url": null
+    },
+    {
+      "path": "results/phase2/entropy/candidates/margin50_4_raw_1/table.json",
+      "bytes": 3663,
+      "sha256": "ffa6d1e0862851475178b206f1379ff388f70fd82ce6f4e41f17f5b4b62e4bde",
+      "stage": "checkpoints/table.json",
+      "role": "Saved calibrated table; all learned entries are charged in archive",
+      "download_url": null
+    },
+    {
+      "path": "results/phase2/entropy/screen.json",
+      "bytes": 109504,
+      "sha256": "8c4955352ada12ea5d575775358b9242eee223d17a5a544aced573811fedc6d6",
+      "stage": "checkpoints/screen.json",
+      "role": "Saved finalist selection including exact baseline and chosen table",
+      "download_url": null
+    },
+    {
+      "path": "results/phase2/entropy/cache/base_logits.i16",
+      "bytes": 1179648000,
+      "sha256": "33fd711b305efb12ab9f7363c1404229996b79b8e27896f20ed910e98f105f75",
+      "stage": "results/phase2/entropy/cache/base_logits.i16",
+      "role": "Captured predictor rows; regenerable by capture.py on GPU",
+      "download_url": null
+    },
+    {
+      "path": "results/phase2/entropy/cache/feature.u8",
+      "bytes": 117964800,
+      "sha256": "117c490729a88d7544a1af9049c9fca2b93383c30e0f0113aa0ea4bbd34bbf97",
+      "stage": "results/phase2/entropy/cache/feature.u8",
+      "role": "Captured predictor rows; regenerable by capture.py on GPU",
+      "download_url": null
+    },
+    {
+      "path": "results/phase2/entropy/cache/symbols.u8",
+      "bytes": 117964800,
+      "sha256": "8eb51ab7a2884c9d7b6e73ee60f78ded38c691d6b82e639b75dddec6e0ac1366",
+      "stage": "results/phase2/entropy/cache/symbols.u8",
+      "role": "Captured predictor rows; regenerable by capture.py on GPU",
+      "download_url": null
+    },
+    {
+      "path": "results/phase2/entropy/cache/manifest.json",
+      "bytes": 973,
+      "sha256": "cd85c1af1a356b628e6d7d0b3342242d269e6d9df69b381f864bef1b3fae862d",
+      "stage": "results/phase2/entropy/cache/manifest.json",
+      "role": "Captured predictor rows; regenerable by capture.py on GPU",
+      "download_url": null
+    },
+    {
+      "path": "results/phase2/pose/full-control/pass3.zip",
+      "bytes": 186152,
+      "sha256": "0afd7f640ebdaac9826fc2c2f4f88a4c4ef3efa2297e35679bda501bbb49e3e6",
+      "stage": null,
+      "role": "Composition input / pose replay comparison only",
+      "download_url": null
+    },
+    {
+      "path": "results/phase2/entropy/candidates/margin50_4_raw_1/archive.zip",
+      "bytes": 185986,
+      "sha256": "9d0a14db2620d788a6a5007dd4b5e09db9610f996710e26f9a6062760a1e3db4",
+      "stage": null,
+      "role": "Composition input / entropy replay comparison only",
+      "download_url": null
+    },
+    {
+      "path": "artifacts/pr135/archive.zip",
+      "bytes": 186724,
+      "sha256": "12cf5d71a94065184f097c3e40dfe9f1db8402a1a76a80efc76a6956fe1e4004",
+      "stage": null,
+      "role": "Inherited pretrained PR135 archive (can rebuild v1)",
+      "download_url": "https://github.com/codexblack/comma_video_compression_challenge/releases/download/semantic-pose-HPAC_CPR1_polished-f26/archive.zip"
+    }
+  ],
+  "availability": "All listed files are available in the release bundle. Null download_url means no separate direct asset; use the file path within the bundle.",
+  "bundle": {
+    "url": "https://github.com/ExplodingCB/comma_video_compression_challenge/releases/download/semantic-blocks-v2/reproduction-inputs.zip",
+    "bytes": 560185912,
+    "sha256": "c5bd4129c5d457729eba035d518ad8f2291369214fe7996857062eeb528f6ac6",
+    "files": 11,
+    "uncompressed_input_bytes": 1416465681,
+    "all_member_hashes_verified": true,
+    "archive_contains_finished_v2": false
+  }
+}

@@ -51,6 +51,13 @@ step combines the exact supplied sections; it is not the entire
 optimization pipeline. Reproduction uses the prior trained artifacts
 and experiment checkpoints identified in provenance.json.
 
+The recovered implementation and its portable entry point are now included:
+`compress.sh`, `compress.py`, and `compression/`. See `REPRODUCING.md` for the
+two rebuild modes, original optimization commands, input hashes and availability,
+and the distinction from training the inherited models from the original video.
+`provenance.json` is the original composition receipt, with its historical local
+paths and pre-evaluation status preserved. New runs write separate receipts.
+
 These phase-2 changes were prepared with Codex assistance. The earlier
 186,151-byte PR #141 artifact and its participant explanation describe
 the first version. This update retains the original attribution and

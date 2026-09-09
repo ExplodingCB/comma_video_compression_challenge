@@ -1,0 +1,244 @@
+{
+  "files": [
+    {
+      "packaged": "recovered/experiments/combinations/README.md",
+      "original": "experiments/combinations/README.md",
+      "sha256": "09ae6ee2f56f2e34f1cfbffea4becb1a66e39973642321cc3863155b14a32188",
+      "edits": "none"
+    },
+    {
+      "packaged": "recovered/experiments/combinations/compose.py",
+      "original": "experiments/combinations/compose.py",
+      "sha256": "30df41b340a2521d9563a03b444eb6645ce9092e7e51fad70341138a536ba5f8",
+      "edits": "none"
+    },
+    {
+      "packaged": "recovered/experiments/combinations/lineage.py",
+      "original": "experiments/combinations/lineage.py",
+      "sha256": "97c259ce0c2bc290e685d0e901254c1ae28058e83f7856d4c0077d2f104aedec",
+      "edits": "none"
+    },
+    {
+      "packaged": "recovered/experiments/combinations/state_fingerprint.py",
+      "original": "experiments/combinations/state_fingerprint.py",
+      "sha256": "e8d8baf2c7b4efc1145591c287fe1aba15508454f5f96f6188a0cfd6af005971",
+      "edits": "none"
+    },
+    {
+      "packaged": "recovered/experiments/combinations/test_compose.py",
+      "original": "experiments/combinations/test_compose.py",
+      "sha256": "d3d62a02d84fd416ba96be929aad1eb8b81b4b0543ef82ca1173095d40650385",
+      "edits": "none"
+    },
+    {
+      "packaged": "recovered/experiments/combinations/verify.py",
+      "original": "experiments/combinations/verify.py",
+      "sha256": "9a99d9334a967b487877fe055750a118b10f07540f78ff93135693d86aa1be97",
+      "edits": "none"
+    },
+    {
+      "packaged": "recovered/experiments/entropy/README.md",
+      "original": "experiments/entropy/README.md",
+      "sha256": "99b23e4854bfebef3312ec15242f8f093f72155f5c70f1d9f8cce733f1e2c169",
+      "edits": "none"
+    },
+    {
+      "packaged": "recovered/experiments/entropy/cache_hook.py",
+      "original": "experiments/entropy/cache_hook.py",
+      "sha256": "3a82e044a73789279874b5ce2cdc6001a84c4e1ed0cda5c5e31a90b7011d583e",
+      "edits": "none"
+    },
+    {
+      "packaged": "recovered/experiments/entropy/capture.py",
+      "original": "experiments/entropy/capture.py",
+      "sha256": "cc4e93b6bc598410394a10fbb2fae5a624da6fcd1894d0c37ba3e676a078ba0e",
+      "edits": "none"
+    },
+    {
+      "packaged": "recovered/experiments/entropy/encode.py",
+      "original": "experiments/entropy/encode.py",
+      "sha256": "47b26b2b99a659410aaecde2499236ec0a4c7883c483fc3c167512a3b6ad1caa",
+      "edits": "none"
+    },
+    {
+      "packaged": "recovered/experiments/entropy/fit.py",
+      "original": "experiments/entropy/fit.py",
+      "sha256": "39c347d2d28b0624352d3257d820de6380a09f8b756532dd1d6d314becb13b81",
+      "edits": "none"
+    },
+    {
+      "packaged": "recovered/experiments/entropy/replay_baseline.py",
+      "original": "experiments/entropy/replay_baseline.py",
+      "sha256": "944a07e0201efa7fac2632339463a0705a181bc501b8818fdac3d2f7758730a0",
+      "edits": "none"
+    },
+    {
+      "packaged": "recovered/experiments/lossless/README.md",
+      "original": "experiments/lossless/README.md",
+      "sha256": "581c99687351f2706d8adf4d7f9cb39e4b411a82f8f3b2b5f5b3bc1efbbf0d06",
+      "edits": "none"
+    },
+    {
+      "packaged": "recovered/experiments/lossless/block_container.py",
+      "original": "experiments/lossless/block_container.py",
+      "sha256": "cbfe96cd2a7ace9f686892a2c13bea54d8b72f554f9aa382b2fff59c58c883ad",
+      "edits": "none"
+    },
+    {
+      "packaged": "recovered/experiments/lossless/block_dp.py",
+      "original": "experiments/lossless/block_dp.py",
+      "sha256": "25dc917057537438f9ed62b888a75e8ea30b4ffc7316afd7b884132fbf9bf3d8",
+      "edits": "none"
+    },
+    {
+      "packaged": "recovered/experiments/lossless/compress.py",
+      "original": "experiments/lossless/compress.py",
+      "sha256": "83cdd8ccd85faffcb28816c381b11946ebc435d6ae797c34272d5b3c82037f08",
+      "edits": "none"
+    },
+    {
+      "packaged": "recovered/experiments/lossless/prepare_candidate.py",
+      "original": "experiments/lossless/prepare_candidate.py",
+      "sha256": "03ef3f7be781c7490516a1be1e476c54cff2623d755ed2b5e92516de9d95f06b",
+      "edits": "none"
+    },
+    {
+      "packaged": "recovered/experiments/lossless/refine.py",
+      "original": "experiments/lossless/refine.py",
+      "sha256": "ebd24858ac6ce630091cc4152a1f1ac5181ccaf43a7789335419aba054372fa4",
+      "edits": "none"
+    },
+    {
+      "packaged": "recovered/experiments/lossless/split_screen.py",
+      "original": "experiments/lossless/split_screen.py",
+      "sha256": "ea4239f3bfe98ed3dbc4c122e50844965a990765a305305ebc8bb9e011b4c112",
+      "edits": "none"
+    },
+    {
+      "packaged": "recovered/experiments/lossless/sweep.py",
+      "original": "experiments/lossless/sweep.py",
+      "sha256": "a8b13578d7dfd3ddda8b94e355f0b5f4a93ac89277946d7373a0d0a9b78a1894",
+      "edits": "none"
+    },
+    {
+      "packaged": "recovered/experiments/lossless/verify_candidate.py",
+      "original": "experiments/lossless/verify_candidate.py",
+      "sha256": "8d35378579ab67fe4e9d5605bb24996ade0bd2f9f9d8703a454f8df119e750bb",
+      "edits": "none"
+    },
+    {
+      "packaged": "recovered/experiments/pose/README.md",
+      "original": "experiments/pose/README.md",
+      "sha256": "7ea2ad58aabe9dff2a9480fa95f39bdbe1b3cc00b1cfa35779abe4637fb421f1",
+      "edits": "none"
+    },
+    {
+      "packaged": "recovered/experiments/pose/audit.py",
+      "original": "experiments/pose/audit.py",
+      "sha256": "94f0461c953c3564217aba0e0bc0bc3d199cd7902f9cf30d368ae385bdc79612",
+      "edits": "none"
+    },
+    {
+      "packaged": "recovered/experiments/pose/audit_completed.py",
+      "original": "experiments/pose/audit_completed.py",
+      "sha256": "a5b432f124837f91fad285cd3dc0929446c08324c006f2276f7d8588cbf6f19e",
+      "edits": "none"
+    },
+    {
+      "packaged": "recovered/experiments/pose/build_all_int4.py",
+      "original": "experiments/pose/build_all_int4.py",
+      "sha256": "6be9e82b66a4c343d87a5de8621d63121d821e605cacc188912b6c4cec595a5e",
+      "edits": "none"
+    },
+    {
+      "packaged": "recovered/experiments/pose/build_cache.py",
+      "original": "experiments/pose/build_cache.py",
+      "sha256": "32ea2b1f8ed2399fa2d5642c491e7fff038b1e4fa1c924945de50ea8c5324316",
+      "edits": "none"
+    },
+    {
+      "packaged": "recovered/experiments/pose/common.py",
+      "original": "experiments/pose/common.py",
+      "sha256": "47c0cd9b6507e6321cb4ca2c29cf8d45384865ca67b35246cd8b79cbcb9f7bfb",
+      "edits": "none"
+    },
+    {
+      "packaged": "recovered/experiments/pose/refine_screen.py",
+      "original": "experiments/pose/refine_screen.py",
+      "sha256": "3538cc1aed8c3379555d393607816944fe2e639fd00318002be1e95303843f8a",
+      "edits": "none"
+    },
+    {
+      "packaged": "recovered/experiments/pose/rescue.py",
+      "original": "experiments/pose/rescue.py",
+      "sha256": "26b6486857e8ff8ceed3a00f2024684c0b73de160274499f249b574572ce0095",
+      "edits": "none"
+    },
+    {
+      "packaged": "recovered/experiments/pose/run_full_recovery.py",
+      "original": "experiments/pose/run_full_recovery.py",
+      "sha256": "fecb2504cc9d28513f27d1b5c131a9ddab9c98c79b6152c275f335b33e80d81e",
+      "edits": "none"
+    },
+    {
+      "packaged": "recovered/experiments/pose/run_joint_screen.py",
+      "original": "experiments/pose/run_joint_screen.py",
+      "sha256": "cfbe193cf6124407af16b95c552f06f888f107ef05eec32c55ec5f20aa62c3a5",
+      "edits": "none"
+    },
+    {
+      "packaged": "recovered/experiments/pose/run_rescue_screen.py",
+      "original": "experiments/pose/run_rescue_screen.py",
+      "sha256": "77db619fe92cf1af0c73aee729106644a08379abb419a0f56c35301cc033098e",
+      "edits": "none"
+    },
+    {
+      "packaged": "recovered/experiments/pose/screen.py",
+      "original": "experiments/pose/screen.py",
+      "sha256": "6e5a111b237d2b859cc4eb6bafe757cd31fa7b2d01fb9791b31f16ad71064630",
+      "edits": "none"
+    },
+    {
+      "packaged": "recovered/scripts/evaluate_exact.py",
+      "original": "scripts/evaluate_exact.py",
+      "sha256": "2f818cc8154d9fd727edd5cdd1ccf1d109b09eddf6e53f8c958a229a4faf55fb",
+      "edits": "none"
+    },
+    {
+      "packaged": "baseline/LINEAGE.md",
+      "original": "submissions/semantic_blocks/LINEAGE.md",
+      "sha256": "dd9f44c7c7d6ee9df1a41a1a4bf1557ac274a0d693546589ae2ee7aae268da4c",
+      "edits": "none"
+    },
+    {
+      "packaged": "baseline/compress.py",
+      "original": "submissions/semantic_blocks/compress.py",
+      "sha256": "d44776fc94ce4f0f9e553cbe82960ceda548451c17d700020315fce0c453cb51",
+      "edits": "none"
+    },
+    {
+      "packaged": "baseline/recipe.json",
+      "original": "submissions/semantic_blocks/recipe.json",
+      "sha256": "01c97c67fe9f6896e1622010a44c3b993866832a5c10cf96f7c848a5d69961a2",
+      "edits": "none"
+    },
+    {
+      "packaged": "baseline/runtime/block_container.py",
+      "original": "submissions/semantic_blocks/runtime/block_container.py",
+      "sha256": "71d62656858946591eb7cfec54ef12397fb6d515f80804016cfe2ce33a55d84f",
+      "edits": "none"
+    },
+    {
+      "packaged": "baseline/runtime/residual_archive.py",
+      "original": "submissions/semantic_blocks/runtime/residual_archive.py",
+      "sha256": "157d5c5d68fd5b35aa28b1325cf2237111d229ba3e3be457061c27725a42f36d",
+      "edits": "none"
+    },
+    {
+      "packaged": "blk2.py",
+      "original": "experiments/lossless/compress.py",
+      "sha256": "83cdd8ccd85faffcb28816c381b11946ebc435d6ae797c34272d5b3c82037f08",
+      "edits": "none"
+    }
+  ]
+}

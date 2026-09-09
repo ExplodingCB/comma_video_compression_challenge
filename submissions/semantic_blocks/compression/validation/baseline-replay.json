@@ -1,0 +1,11 @@
+{
+  "precision": 8,
+  "rows": 117964800,
+  "probability_sha256": "ea28d84909340b1479b62fdcb85bb682d197e9f27c176e218e3104b782721d32",
+  "probability_matches": true,
+  "token_stream_matches": true,
+  "token_bytes": 114706,
+  "nll_bits": 917643.9588428593,
+  "overhead_bytes": 0.5051446425932227,
+  "seconds": 27.366496690000076
+}

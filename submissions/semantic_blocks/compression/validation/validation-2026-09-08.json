@@ -1,0 +1,70 @@
+{
+  "status": "passed_fresh_recovery_inflation_and_600_pair_evaluation",
+  "run_directory": "/mnt/d/Projects/video-compression/results/pipeline-recovery/clean-SfQlGg",
+  "archive_matches_published_bytes": true,
+  "archive_sha256": "640e9a8d618652ce4e0570cbcc92348d3f2457b8b737a13ab68cdbb9595fcf2f",
+  "archive_bytes": 185704,
+  "raw_matches_recorded": true,
+  "metrics_match_recorded": true,
+  "evaluator_and_input_hashes_match_recorded": true,
+  "new_evaluation": {
+    "status": "full_local_evaluation",
+    "samples": 600,
+    "archive_bytes": 185704,
+    "original_bytes": 37545489,
+    "posenet_distortion": 6.709069111821009e-06,
+    "segnet_distortion": 0.0002964019950013608,
+    "rate": 0.0049461068412239885,
+    "score": 0.16148376127095507,
+    "terms": {
+      "segmentation": 0.029640199500136077,
+      "pose": 0.008190890740219288,
+      "rate": 0.12365267103059971
+    },
+    "evaluator_commit": "db52c5a9f05d5298e314fb0fa130290c4a350c4e",
+    "archive_sha256": "640e9a8d618652ce4e0570cbcc92348d3f2457b8b737a13ab68cdbb9595fcf2f",
+    "raw_sha256": "d6f2a492b2ca6df4f6a8f29d0f1ccd6a3872e4a0ed2547970286adecd0504e36",
+    "evaluator_files": {
+      "evaluate.py": "bbf9bb16322a129a2924be2c0a13bdd2a461205da7178e0ed77e009c78984d58",
+      "frame_utils.py": "5ebd50a76c54b54ce89aefe31fa760eab6b6d1597503d882a627c84cfec81470",
+      "modules.py": "99365645e71ce9f418f6587e984aef5702bab5d957d9cac2ee33f4db00b5e195",
+      "uv.lock": "1ec507c6bff1f573d28916b15a473991816d44ae6b00255ed8fae19c7341ee30"
+    },
+    "input_files": {
+      "models/posenet.safetensors": "0f3a0874c5c387f990d7b88bd1d7e1f6de35d98b45f2a289989db2c77b9b6576",
+      "models/segnet.safetensors": "68956e328d4c5d875389a1a444870e6bac1c052c9986123827af95c07c6991b6",
+      "videos/0.mkv": "2611f5f3e186f3529777749f97bd4cce3a208d6b3559e137bd45d256980d2fa9"
+    },
+    "torch": "2.9.0+cu128",
+    "gpu": "NVIDIA GeForce RTX 5080",
+    "numeric_policy": "IEEE / TF32 disabled",
+    "dali_disable_nvml": "1",
+    "elapsed_seconds": 39.88152239999988
+  },
+  "new_inflation": {
+    "archive_bytes": 185704,
+    "archive_sha256": "640e9a8d618652ce4e0570cbcc92348d3f2457b8b737a13ab68cdbb9595fcf2f",
+    "decode_and_render_seconds": 239.60995745658875,
+    "raw_bytes": 3662409600,
+    "residual_schema": "fixed_boundary_int6",
+    "selector": {
+      "frame_count": 600,
+      "mode_count": 8,
+      "payload_bytes": 14,
+      "payload_sha256": "67d43d9050b1005ef04ef8f0e5657d10bd3cbd3920a9874449c9876a676b9a17"
+    },
+    "token_decoder": {
+      "adapter_sha256": "",
+      "corrected_cdf_input_sha256": "420a7c05b980f8fc69bd352a41fabca354bb45b2b0e5f9de6a0cfeeb0455b7db",
+      "corrected_quantized_logit_sha256": "103306e322013984ef2e412be56ce18b51699a4b728f8fb90144b901c35020a3",
+      "decode_runtime_seconds": 177.34955072402954,
+      "decoded_token_sha256": "c5c7671d037b6912980c57929a5b6d789d250ee6a93e3b0a6018cf9f63e32ece",
+      "decoder_bit_position": 915572,
+      "token_codec": "rc64"
+    }
+  },
+  "prior_results_date": "2026-09-07",
+  "new_results_date": "2026-09-08",
+  "full_optimization_rerun": false,
+  "upstream_training_from_original_video": false
+}

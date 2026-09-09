@@ -1,0 +1,38 @@
+{
+  "reference_pr": 135,
+  "reference_commit": "6dcf77164ccbdcc1e0e41c99312e65ace4bc1fb4",
+  "reference_identical_files": 21,
+  "modified_inherited_files": [
+    "runtime\\residual_archive.py"
+  ],
+  "candidate_source_hashes": {
+    "compress.py": "d44776fc94ce4f0f9e553cbe82960ceda548451c17d700020315fce0c453cb51",
+    "compress.sh": "2b916fd4e1c14a89dc08a91d264e0752376564fec5b86141a4188ed84c77ce18",
+    "cpr1\\carrier_codec.py": "256457e28847355413056075f083cbb290e29573c4fbb45561f9127df653b90c",
+    "cpr1\\hpac_integer.py": "72ab30a6d0c9670389f98db8244fbf2185c5655f719982c157553b1774189749",
+    "cpr1\\hpac_integer_sparse.py": "26b578afc814069aebdbe73a6d227c58f7f23b5117d9939b3884c26304ddb63a",
+    "cpr1\\inflate.py": "4b0df2aba88394a98047c84dc47e81b5cd686fcce5650edc888b5c58fa42bcb0",
+    "cpr1\\integer_model_io.py": "01e2191ba3b30037da7427e3dc06501363a34017d808c31cdd0973a55d9c5664",
+    "inflate.py": "8a7cf0dc175623789f31c2cbf6c856dff3a6ecedc5d9a7e0fc360f592a1f76b3",
+    "inflate.sh": "8fc8dc27e9309f338b82fb4b70aa946695a2dc0cd42dc74be8d7d6d1ec9bbf9a",
+    "recipe.json": "01c97c67fe9f6896e1622010a44c3b993866832a5c10cf96f7c848a5d69961a2",
+    "runtime\\__init__.py": "21e88040feab212520aa2ac91df344a117245d25eaab6d16e61bbd039b74b00e",
+    "runtime\\baseline.py": "8cd1429bd32779d927fd41fcccbcd6c0dd014ab76f3cdad345d5ba2e706336d5",
+    "runtime\\bits.py": "f33d851fa65d3702e0d2049e5624548955d4e248b342e434f1daf1153970f550",
+    "runtime\\block_container.py": "71d62656858946591eb7cfec54ef12397fb6d515f80804016cfe2ce33a55d84f",
+    "runtime\\carrier_repack.py": "19625a6bc7546e316d9bc9556bf16046cab3d317ae350579617207b4144950a8",
+    "runtime\\entropy\\__init__.py": "53ffe362bd2e7614a7c7cb2161ecf3ca788efea0497005a82ab3b001bcbbc7b7",
+    "runtime\\entropy\\adaptive_ans.py": "d5ab219c65816147bb4e51e3adbfb9f3cb243f837529f5709013add58f355ec2",
+    "runtime\\entropy\\coefficient_ar1_codec.py": "5b7275feb4678fff89c0994ab568248c50bda9505b243367bd8a84ad3112a681",
+    "runtime\\entropy\\coefficient_predictor.py": "70d224eb8e6bc6ed8b16d47ab50dfd05a8bf2b1c983a9228586ea63ffd436aad",
+    "runtime\\entropy\\rc64.py": "dbc533b6945d8b2cc39c7f1b1ef92d7797869a8067073a74b0db0069a8183288",
+    "runtime\\entropy\\rc64_backend.c": "e69d12ccc1f6242178edc476295b2993e2a811da14de1fe60823ebb098c23fb1",
+    "runtime\\entropy\\renderer_weight_codec.py": "74dacd014842bc871c778f5d402c795567e2068ff3814b16810498267ab62273",
+    "runtime\\f26_inflate.py": "a5231537c3503fabd8a88a2a91831357027b95878bd9004edc4512fa1aa6de9e",
+    "runtime\\frame0_selector.py": "9b815c6429739320c10098eb25d9bba4056f210919f8c7acaeb010bed82993dd",
+    "runtime\\hpac_inference.py": "4b57564e6fe590d79d80520360eeebbb58349d5ee01ac9bb81b1ef6fdb4d1659",
+    "runtime\\ihs2.py": "756ae148b0f85e5c206a88edd3009e0f65d15856e4cd15cb965da6a751afd762",
+    "runtime\\ihs2_gate_a.py": "4df82e493c42bc43991db44b32bb75c1f1f84635001f24559b44792d4fdab00a",
+    "runtime\\residual_archive.py": "157d5c5d68fd5b35aa28b1325cf2237111d229ba3e3be457061c27725a42f36d"
+  }
+}
