@@ -1,6 +1,0 @@
-# Install the pinned challenge uv.lock environment first; see REPRODUCING.md.
-brotli==1.2.0
-scipy==1.16.2
-# Only the optional broad lossless searches import these two packages.
-pyppmd==1.3.1
-zstandard==0.25.0

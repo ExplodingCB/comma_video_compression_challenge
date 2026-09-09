@@ -1,9 +1,4 @@
-*.sh text eol=lf
-*.py text eol=lf
-*.md text eol=lf
-*.json text eol=lf
-*.txt text eol=lf
-# Preserve recovered source bytes so recovered-source.json remains verifiable.
-compression/recovered/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
-compression/baseline/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
-compression/blk2.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+* text eol=lf
+*.zip binary
+# Preserve the exact evaluated upstream file, including its final blank line.
+runtime/compensation_overlay.py whitespace=-blank-at-eof

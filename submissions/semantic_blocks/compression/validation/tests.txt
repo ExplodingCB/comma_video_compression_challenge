@@ -1,9 +1,0 @@
-test_existing_output_and_published_path_are_protected (__main__.RebuildTests.test_existing_output_and_published_path_are_protected) ... ok
-test_original_radius_32_search_recovers_fixed_recipe (__main__.RebuildTests.test_original_radius_32_search_recovers_fixed_recipe) ... ok
-test_real_sources_reproduce_target_and_decoded_state (__main__.RebuildTests.test_real_sources_reproduce_target_and_decoded_state) ... ok
-test_wrong_source_is_rejected_before_output (__main__.RebuildTests.test_wrong_source_is_rejected_before_output) ... ok
-
-----------------------------------------------------------------------
-Ran 4 tests in 30.404s
-
-OK

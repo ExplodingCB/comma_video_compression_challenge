@@ -13,6 +13,7 @@ from carrier_codec import MAGIC as COMPACT_CARRIER_MAGIC
 from carrier_codec import decode_compact_carrier
 from hpac_integer import IntegerHPAC
 from integer_model_io import deserialize_integer_model
+from ddm_mp2_semantic_receiver import unpack_variant_semantic_or_none
 from torch import nn
 from torch.nn import functional
 
@@ -165,14 +166,24 @@ def unpack_semantic_pose(raw: bytes):
         raise ValueError("semantic-pose payload length mismatch")
     semantic_blob = raw[8 : 8 + semantic_bytes]
     carrier_blob = memoryview(raw[8 + semantic_bytes :])
-    try:
-        semantic_width = SEMANTIC_WIDTH_BY_PAYLOAD_BYTES[semantic_bytes]
-    except KeyError as error:
-        raise ValueError(
-            f"unsupported semantic payload size: {semantic_bytes} bytes"
-        ) from error
+    tagged_state = None
+    if semantic_blob.startswith((b"SD1M", b"SM3R")):
+        semantic_width = SEMANTIC_WIDTH
+    else:
+        try:
+            semantic_width = SEMANTIC_WIDTH_BY_PAYLOAD_BYTES[semantic_bytes]
+        except KeyError as error:
+            raise ValueError(
+                f"unsupported semantic payload size: {semantic_bytes} bytes"
+            ) from error
     semantic = SemanticTokenRenderer(semantic_width)
-    semantic.load_state_dict(unpack_semantic(semantic_blob, semantic.state_dict()))
+    tagged_state = unpack_variant_semantic_or_none(
+        semantic_blob,
+        semantic.state_dict(),
+    )
+    if tagged_state is None:
+        tagged_state = unpack_semantic(semantic_blob, semantic.state_dict())
+    semantic.load_state_dict(tagged_state, strict=True)
 
     scale_bytes = CARRIER_DIM * 4
     basis_count = CARRIER_DIM * 3 * CARRIER_H * CARRIER_W

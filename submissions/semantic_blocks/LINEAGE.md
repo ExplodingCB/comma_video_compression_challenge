@@ -1,65 +1,35 @@
-# Phase-2 provenance and review status
+# Lineage
 
-This local research candidate descends from codexblack's
-[PR #135](https://github.com/commaai/comma_video_compression_challenge/pull/135),
-`semantic-pose-HPAC_CPR1_polished`, source commit
-`6dcf77164ccbdcc1e0e41c99312e65ace4bc1fb4`. The original trained archive
-was 186,724 bytes, SHA-256
-`12cf5d71a94065184f097c3e40dfe9f1db8402a1a76a80efc76a6956fe1e4004`.
-The original architecture and much of its learned state are prior work.
-The upstream MIT license and copyright notice are included in LICENSE.
+This is an attributed derivative of adpena's
+[PR #140, semantic_joint_ctxmix](https://github.com/commaai/comma_video_compression_challenge/pull/140),
+pinned at commit `7f29354d7d33f7f4e734316981e3341dd2cd66f8`.
+Its public source archive is 180,002 bytes, SHA-256
+`cbb8d928a8ccdd3f5103da1d4a8d38d0662a5e5615266b923b5f8350d405bf25`.
 
-That work builds on [PR #130](https://github.com/commaai/comma_video_compression_challenge/pull/130),
-[PR #133](https://github.com/commaai/comma_video_compression_challenge/pull/133),
-jas0xf's [PR #86](https://github.com/commaai/comma_video_compression_challenge/pull/86),
-and EthanYangTW's [PR #67](https://github.com/commaai/comma_video_compression_challenge/pull/67)
-and [PR #79](https://github.com/commaai/comma_video_compression_challenge/pull/79).
+PR #140 inherits the semantic renderer / pose-carrier architecture from
+Fesal Fayed's PR #130, JasonMo123's PR #133, and Shreyan Mohanty's PR #135.
+Adpena's work includes the semantic edits, pose re-solve, pruned mixed-precision
+renderer, adaptive context mixing, and carrier entropy representations used here.
+We did not rerun or independently reproduce those training and solve stages.
 
-The model section comes from `results/phase2/pose/full-control/pass3.zip`.
-Its input archive SHA-256 is `0afd7f640ebdaac9826fc2c2f4f88a4c4ef3efa2297e35679bda501bbb49e3e6`.
+Our change groups the serialized renderer's metadata and code spans, storing
+every span length in a `LAY1` header. A four-block `BLK2` container then stores
+two blocks raw and two with Brotli, with a reversible two-byte lane transpose
+on one compressed block. The archive carries the layout, block boundaries,
+codecs and transform settings. No model values, dictionaries, pose coefficients,
+or semantic corrections move from the archive into source code.
 
-The original renderer, HPAC model, pose basis, and frame-zero selector
-are inherited unchanged. The model-source experiment optimized and
-serialized pose coefficients; the complete pose carrier is therefore
-not byte-identical to the earlier submission.
+BLK2 comes from our earlier semantic_blocks work in PR #141. Grouping and the
+integration with PR #140 are new local work implemented with Codex assistance.
+The new archive is 179,891 bytes, saving 111 bytes against PR #140 and 5,813
+against our previous 185,704-byte v2 archive. Most of the score improvement
+against v2 comes from the inherited PR #140 state and algorithms.
 
-The entropy tail comes from `results/phase2/entropy/candidates/margin50_4_raw_1/archive.zip`.
-Its input archive SHA-256 is `9d0a14db2620d788a6a5007dd4b5e09db9610f996710e26f9a6062760a1e3db4`.
-This replaces the earlier residual correction table and encoded token
-stream with a serialized margin-conditioned correction table and its
-newly arithmetic-coded stream. The encoded bytes change; the intended
-decoded semantic token symbols are retained. Cached symbol replay and
-independent causal GPU inflation are separate validation gates. The
-CPU composition tool does not certify causal replay or a video score.
-New table values, scale, margin descriptors, pose coefficients, and
-the encoded stream are carried in the charged archive.
+All PR #140 files under `cpr1/` are unchanged. Under `runtime/`, the only changed
+inherited file is `residual_archive.py`; `block_container.py` and
+`segment_layout.py` are added. `inflate.py` updates the expected archive size
+and hash. The compressor and recipe reproduce this new representation from the
+pinned PR #140 archive. Detailed source hashes are in `provenance.json`.
 
-The two source archives must decode byte-identical HPAC model blobs.
-Composition also checks compatible model/runtime code and preserves
-the entropy source's ETP1 reader, adding only BLK2 format dispatch.
-
-BLK2 stores independent blocks using raw bytes, Brotli or LZMA2 as
-specified in recipe.json, with optional reversible byte-lane transposes.
-All block boundaries and
-transform descriptors are serialized. The model bytes are recovered
-exactly; Brotli is a general-purpose library installed in a contained
-dependency directory by the supplied bootstrap.
-
-The phase-2 workflow includes pose-coefficient optimization, entropy
-calibration/re-encoding, and lossless block packing. The final composition
-step combines the exact supplied sections; it is not the entire
-optimization pipeline. Reproduction uses the prior trained artifacts
-and experiment checkpoints identified in provenance.json.
-
-The recovered implementation and its portable entry point are now included:
-`compress.sh`, `compress.py`, and `compression/`. See `REPRODUCING.md` for the
-two rebuild modes, original optimization commands, input hashes and availability,
-and the distinction from training the inherited models from the original video.
-`provenance.json` is the original composition receipt, with its historical local
-paths and pre-evaluation status preserved. New runs write separate receipts.
-
-These phase-2 changes were prepared with Codex assistance. The earlier
-186,151-byte PR #141 artifact and its participant explanation describe
-the first version. This update retains the original attribution and
-license; its new pose coefficients and entropy calibration are distinct
-from that first version. This file records technical provenance.
+The upstream MIT license is preserved in `LICENSE`. This is a local research
+candidate, not a claim of official evaluation or leaderboard placement.
